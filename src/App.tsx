@@ -7,6 +7,7 @@ import DrawTheHillPage from './components/DrawTheHillPage';
 import PocketDriftPage from './components/PocketDriftPage';
 import CarRushPage from './components/CarRushPage';
 import BikeHeroPage from './components/BikeHeroPage';
+import FormulaRushPage from './components/FormulaRushPage';
 import { GameCard } from './components/GameCard';
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
 
   if (page === 'bike-hero') {
     return <BikeHeroPage />;
+  }
+
+  if (page === 'formula-rush') {
+    return <FormulaRushPage />;
   }
 
   if (gameTitle && gameUrl) {
@@ -92,6 +97,13 @@ function App() {
               imageUrl="/bike-hero.jpg"
               onClick={() => {
                 window.location.href = '?page=bike-hero';
+              }}
+            />
+            <GameCard
+              title="Formula Rush"
+              imageUrl="/formula-rush.jpg"
+              onClick={() => {
+                window.location.href = '?page=formula-rush';
               }}
             />
           </div>
