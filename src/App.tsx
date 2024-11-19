@@ -4,6 +4,9 @@ import { GameDescription } from './components/GameDescription';
 import { GamePage } from './components/GamePage';
 import DriftHuntersPage from './components/DriftHuntersPage';
 import DrawTheHillPage from './components/DrawTheHillPage';
+import PocketDriftPage from './components/PocketDriftPage';
+import CarRushPage from './components/CarRushPage';
+import BikeHeroPage from './components/BikeHeroPage';
 import { GameCard } from './components/GameCard';
 
 function App() {
@@ -18,6 +21,18 @@ function App() {
 
   if (page === 'draw-the-hill') {
     return <DrawTheHillPage />;
+  }
+
+  if (page === 'pocket-drift') {
+    return <PocketDriftPage />;
+  }
+
+  if (page === 'car-rush') {
+    return <CarRushPage />;
+  }
+
+  if (page === 'bike-hero') {
+    return <BikeHeroPage />;
   }
 
   if (gameTitle && gameUrl) {
@@ -41,9 +56,9 @@ function App() {
           ></iframe>
         </div>
 
-        <section className="bg-gray-800 p-4 rounded-lg">
+        <section className="w-full max-w-4xl mx-auto bg-gray-800 p-4 rounded-lg">
           <h2 className="text-xl font-bold mb-4">Play More Games</h2>
-          <div className="flex flex-wrap gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center">
             <GameCard
               title="Drift Hunters"
               imageUrl="https://images.crazygames.com/games/drift-hunters/cover-1656950639575.png?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=504"
@@ -52,16 +67,37 @@ function App() {
               }}
             />
             <GameCard
-              title="DRAW THE HILL"
+              title="Draw The Hill"
               imageUrl="/draw-the-hill.jpg"
               onClick={() => {
                 window.location.href = '?page=draw-the-hill';
               }}
             />
+            <GameCard
+              title="Pocket Drift"
+              imageUrl="/pocket-drift.jpg"
+              onClick={() => {
+                window.location.href = '?page=pocket-drift';
+              }}
+            />
+            <GameCard
+              title="Car Rush"
+              imageUrl="/car-rush.jpg"
+              onClick={() => {
+                window.location.href = '?page=car-rush';
+              }}
+            />
+            <GameCard
+              title="Bike Hero"
+              imageUrl="/bike-hero.jpg"
+              onClick={() => {
+                window.location.href = '?page=bike-hero';
+              }}
+            />
           </div>
         </section>
 
-        <section className="bg-gray-800 p-8 rounded-lg">
+        <section className="w-full max-w-4xl mx-auto bg-gray-800 p-8 rounded-lg">
           <GameDescription />
         </section>
       </main>
